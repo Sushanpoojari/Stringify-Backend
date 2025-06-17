@@ -63,7 +63,7 @@ export async function signin(req, res) {
                 refreshToken
             });
         } else {
-            res.status(400).json(getFailedMessagePayload(false, "Login Failed", "User does not exist!"));
+            res.status(400).json(getFailedMessagePayload(false, "Login Failed", "Invalid credentials!"));
         }
     } catch (error) {
         console.error("Login error:", error);
