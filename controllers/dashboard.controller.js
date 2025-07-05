@@ -1,4 +1,4 @@
-import { getDashboardData } from "../models/dashboard.model";
+import { getDashboardData } from "../models/dashboard.model.js";
 import { getFailedMessagePayload, getSuccessMessagePayload } from "../utils/globalFunctions/payLoadFunctions"
 
 export async function fetchDashboardData(req, res) {

@@ -1,4 +1,4 @@
-import pool from "../db";
+import pool from "../db.js";
 
 export async function getDashboardData(payload) {
     const {user_id,pageNumber,noOfRecords}=payload;
