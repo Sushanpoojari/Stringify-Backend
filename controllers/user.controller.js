@@ -7,11 +7,11 @@ export async function fetchUserDetails(req,res) {
     
         try {
             if (!user_id) return res.status(400).json(getFailedMessagePayload(false, "API Request Failed", "Required User Id"))
-            const userData= await getUserDetails({ user_id});
+            const userData= await getUserDetails( user_id);
             return res.status(201).json(getSuccessMessagePayload(true,"Successfully fetched User data",userData))
     
         } catch (error) {
             console.error("fetchUserDetails error:", error);
-            res.status(500).json(getFailedMessagePayload(false, "Failed to create the user", error?.detail));
+            res.status(500).json(getFailedMessagePayload(false, "Failed to fetch the user", error?.detail));
         }
 }
