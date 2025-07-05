@@ -1,5 +1,5 @@
 import { getDashboardData } from "../models/dashboard.model.js";
-import { getFailedMessagePayload, getSuccessMessagePayload } from "../utils/globalFunctions/payLoadFunctions"
+import { getFailedMessagePayload, getSuccessMessagePayload } from "../utils/globalFunctions/payLoadFunctions.js"
 
 export async function fetchDashboardData(req, res) {
     const { user_id, pageNumber, noOfRecords } = req.body
