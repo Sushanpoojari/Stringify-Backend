@@ -4,6 +4,7 @@ dotenv.config();
 import express from 'express'
 import authRouter from './routes/auth.routes.js';
 import dashboardRouter from './routes/dashboard.routes.js';
+import userRouter from './routes/user.routes.js';
 
 const app = express();
 
@@ -17,6 +18,9 @@ app.use("/api/auth",authRouter)
 
 // Dashboard API
 app.use("/api",dashboardRouter)
+
+// Profile API
+app.use("/api",userRouter)
 
 // Starting the server
 app.listen(process.env.PORT, () => {

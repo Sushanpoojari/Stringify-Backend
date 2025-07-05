@@ -21,3 +21,16 @@ export async function loginUser (email, password)  {
   const result = await pool.query('SELECT * FROM users WHERE email = $1 AND password = $2', [email, password]);
   return result.rows[0];
 };
+
+//Fetch User Data
+export async function getUserDetails(user_id) {
+
+  const query='SELECT * FROM getUserData($1)'
+  try {
+    const result= await pool.query(query,[user_id])
+    return result.rows[0];
+  } catch (error) {
+    console.log("fetchUserDetails Error:: ",err)
+
+  }
+}
